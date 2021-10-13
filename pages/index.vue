@@ -1,8 +1,11 @@
 <template>
   <div>
-    <header>
-      <span class="font-semibold font-mono text-6xl text-blue-600">LOGIN</span>
-    </header>
+    <div>
+      <span class="font-semibold font-mono text-6xl m-10 p-10 text-blue-600"
+        >LOGIN</span
+      >
+    </div>
+
     <div
       class="
         h-screen
@@ -22,7 +25,7 @@
         <form class="space-y-5 mt-5">
           <div class="mb-4 relative">
             <input
-            placeholder="Email or Phone"
+              placeholder="Email or Phone"
               id="email"
               class="
                 w-full
@@ -50,7 +53,7 @@
             "
           >
             <input
-            placeholder="Password"
+              placeholder="Password"
               id="password"
               class="
                 w-full
