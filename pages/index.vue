@@ -242,20 +242,22 @@
               >Forgot password?</a
             >
           </div>
-          <button
-            class="
-              w-full
-              text-center
-              bg-blue-700
-              hover:bg-blue-900
-              rounded-full
-              text-white
-              py-3
-              font-medium
-            "
+          <NuxtLink to="/dash">
+            <button
+              class="
+                w-full
+                text-center
+                bg-blue-700
+                hover:bg-blue-900
+                rounded-full
+                text-white
+                py-3
+                font-medium
+              "
+            >
+              Sign in
+            </button></NuxtLink
           >
-            Sign in
-          </button>
         </form>
       </div>
     </div>
