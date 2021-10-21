@@ -165,11 +165,12 @@
         <form class="space-y-5 mt-5">
           <div class="mb-4 relative">
             <input
+              v-model="login.username"
               pattern=".+@globex\.com"
               size="30"
               required
-              placeholder="Email or Phone"
               id="email"
+              placeholder="Email or Phone"
               class="
                 w-full
                 rounded
@@ -196,6 +197,7 @@
             "
           >
             <input
+              v-model="login.password"
               placeholder="Password"
               id="password"
               class="
@@ -242,22 +244,22 @@
               >Forgot password?</a
             >
           </div>
-          <NuxtLink to="/dash">
-            <button
-              class="
-                w-full
-                text-center
-                bg-blue-700
-                hover:bg-blue-900
-                rounded-full
-                text-white
-                py-3
-                font-medium
-              "
-            >
-              Sign in
-            </button></NuxtLink
+
+          <button
+            class="
+              w-full
+              text-center
+              bg-blue-700
+              hover:bg-blue-900
+              rounded-full
+              text-white
+              py-3
+              font-medium
+            "
+            @click="userLogin()"
           >
+            Sign in
+          </button>
         </form>
       </div>
     </div>
@@ -265,5 +267,26 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      login: {
+        username: 'machinetest@dev.com',
+        password: '12345678',
+      },
+    }
+  },
+  methods: {
+    async userLogin() {
+      try {
+        const response = await this.$auth.loginWith('local', {
+          data: this.login,
+        })
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
+  },
+}
 </script>
